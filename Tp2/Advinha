@@ -1,4 +1,4 @@
-modalidade = input(print(" Jogo da advinha! Pensa em um número de 0 a 100 para o computador tentar advinhar\nou tenta advinhar o número do computador. Boa sorte!\n\n Regras: Quando tentas advinhar responde com uma das afirmações: Certo;\nMaior (se o número for maior); Menor (se o número for menor).\n\n Selecione modalidade do jogo. Selecione:\n 1- Eu advinho \n 2- O computador advinha"))
+modalidade = input(print(" Jogo da advinha! Pensa em um número de 0 a 100 para o computador tentar advinhar\nou tenta advinhar o número do computador. Boa sorte!\n\n Regras: Quando tentas advinhar responde com uma das afirmações: Certo;\nMaior (se o número for maior); Menor (se o número for menor).\n\n Selecione a modalidade do jogo. Selecione:\n 1- Eu advinho \n 2- O computador advinha"))
 while (modalidade != "1") and (modalidade != "2"):
       modalidade = input(print("Erro!\nSeleciona: 1 ou 2!"))  
 if modalidade == "1":
