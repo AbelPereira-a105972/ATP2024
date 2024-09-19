@@ -1,0 +1,58 @@
+modalidade = input(print(" Jogo da advinha! Pensa em um número de 0 a 100 para o computador tentar advinhar\nou tenta advinhar o número do computador. Boa sorte!\n\n Regras: Quando tentas advinhar responde com uma das afirmações: Certo;\nMaior (se o número for maior); Menor (se o número for menor).\n\n Selecione a modalidade do jogo. Selecione:\n 1- Eu advinho \n 2- O computador advinha"))
+while (modalidade != "1") and (modalidade != "2"):
+      modalidade = input(print("Erro!\nSeleciona: 1 ou 2!"))  
+if modalidade == "1":
+        import random
+        jog = random.randint(0,100)
+        adv = int(input(print("\nQual é o número que estou a pensar?")))
+        tent = 1
+        while adv != jog: 
+                  if (adv >= 0) and (adv <= 100):
+                        if adv < jog:
+                              tent = tent + 1
+                              print(f"Maior que {adv}!")
+                              adv = int(input(print("Qual é o número que estou a pensar?")))
+                        else: 
+                              tent = tent + 1
+                              print(f"Menor que {adv}!")
+                              adv = int(input(print("Qual é o número que estou a pensar?")))
+                  else:
+                       adv = int(input(print(f"{adv}\n\nErro! Seleciona um número entre 0 e 100!\n"))) 
+        print(f"É o {jog}!!\n\n Parabéns! O número que estava a pensar era o {jog}. Acertas-te em {tent} tentativas.")
+elif modalidade == "2":
+      guess = input(print("\n Estás a pensar no 50?"))
+      tent2 = 1
+      if guess == "Certo":
+            print("Boa! Acertei à primeira!")
+      a = 50
+      cageM = 100
+      cagem = 0
+      while guess != "Certo":
+        if guess == "Maior":
+                tent2 = tent2 + 1
+                cagem = a
+                a = (cageM+a)/2
+                if a - int(a) >= 0.5:
+                      a = int(a) + 1
+                else:
+                      a = int(a)
+                guess = input(print(f" Estás a pensar no {int(a)}?"))
+        elif guess == "Menor":
+                tent2 = tent2 + 1
+                cageM = a
+                a = (cagem+a)/2
+                if a - int(a) >= 0.5:
+                      a = int(a) + 1
+                else:
+                      a = int(a)
+                if a == 1:
+                      guess = input(print(f" Estás a pensar no {int(a)}?"))
+                      if a != "Certo":
+                            tent2 = tent2 + 1
+                            guess = input(print(f" Estás a pensar no 0?"))
+                else:
+                      guess = input(print(f" Estás a pensar no {int(a)}?"))
+        else:
+                guess = input(print("\n Erro!\n"))
+        if guess == "Certo":
+            print(f"\n Boa! Acertei em {tent2} tentativas!")
