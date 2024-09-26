@@ -48,7 +48,7 @@ elif modalidade == 2:
                 while total not in [1,6,11,16]:
                     total = total - 1
                     seq = seq + 1
-                print(f"Tirei {seq}     x2     :TOTAL:{total}")
+                print(f"Tirei {seq}           :TOTAL:{total}")
                 valor = int(input(print("Valor?")))
                 while valor not in [1,2,3,4]:
                     valor = int(input(print("Seleciona um valor entre 1 e 4.")))
