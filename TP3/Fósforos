@@ -44,11 +44,11 @@ elif modalidade == 2:
                     print(f"Tirei 1         :TOTAL:0\n\nParabéns!! Conseguiste ganhar.")
         elif total not in [1,6,11,16,21]:
             print("Acho que já ganhei!")
-            while total > 1:
-                while total not in [1,6,11,16]:
+            while total > 4:
+                while total not in [6,11,16]:
                     total = total - 1
                     seq = seq + 1
-                print(f"Tirei {seq}           :TOTAL:{total}")
+                print(f"Tirei {seq}          :TOTAL:{total}")
                 valor = int(input(print("Valor?")))
                 while valor not in [1,2,3,4]:
                     valor = int(input(print("Seleciona um valor entre 1 e 4.")))
@@ -57,7 +57,7 @@ elif modalidade == 2:
                 pc = valor - 5
                 total = total + pc
                 print(f"Eu tiro {-pc}, ainda sobram {total} fósforos.")
-                if total in [1]:
+                if total < 5:
                     valor = int(input(print("Só te resta uma opção...")))
                     while valor != 1:
                         valor = int(input(print("Sê um bom perdedor...")))
