@@ -8,15 +8,18 @@ def rand(f):
     import random
     f = random.randint(1,4)
     return f
+def player(valor):
+    valor = int(input(print("Valor?")))
+    while valor not in [1,2,3,4]:
+        valor = int(input(print("Seleciona um valor entre 1 e 4.")))
+    return valor
 total = 21
 while modalidade not in [1,2]:
     modalidade = int(input(print("Selecione a modalidade. 1 (jogador) ou 2 (computador)")))
 if modalidade == 1:
     print("\nAntes de começar queria avisar-te que não consegues ganhar.")
     while total > 1:
-        valor = int(input(print("Valor?")))
-        while valor not in [1,2,3,4]:
-            valor = int(input(print("Seleciona um valor entre 1 e 4.")))
+        valor = player(1)
         total = total - valor
         print(f"Tiras {valor}, então estamos em {total}.")
         pc = valor - 5
@@ -33,10 +36,8 @@ elif modalidade == 2:
         if total in [1,6,11,16,21]:
             if total not in [1]:
                 total = total - pc
-                print(f"PC1 - Tirei {pc}          :TOTAL:{total}")
-                valor = int(input(print("Valor?")))
-                while valor not in [1,2,3,4]:
-                    valor = int(input(print("Seleciona um valor entre 1 e 4."))) 
+                print(f"Tirei {pc}          :TOTAL:{total}")
+                valor = player(1) 
                 total = total - valor
                 print(f"H1 - Tiras {valor}, então estamos em {total}.")
                 if total in [1]:
@@ -49,7 +50,7 @@ elif modalidade == 2:
                     while total not in [1,6,11,16]:
                         total = total - 1
                         seq = seq + 1
-                    print(f"PC2 - Tirei {seq}          :TOTAL:{total}")
+                    print(f"Tirei {seq}          :TOTAL:{total}")
                     if total == 1:
                         valor = int(input(print("Só te resta uma opção...")))
                         while valor != 1:
@@ -63,8 +64,6 @@ elif modalidade == 2:
                     total = total + pc
                     print(f"PC3 - Eu tiro {-pc}, ainda sobram {total} fósforos.")
                 if total != 1:
-                    valor = int(input(print("Valor?")))
-                    while valor not in [1,2,3,4]:
-                        valor = int(input(print("Seleciona um valor entre 1 e 4.")))
+                    valor = player(1)
                     total = total - valor
                     print(f"H2 - Tiras {valor}, então estamos em {total}.")
