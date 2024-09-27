@@ -4,10 +4,6 @@ print("""Jogo dos 21 fósforos!
 * Os jogadores jogam alternadamente;
 * *Quem tirar o último fósforo perde!*""")
 modalidade = int(input(print("\nSelecione a modalidade.\n1 - Começa o jogador.\n2 - Começa o computador.")))
-def rand(f):
-    import random
-    f = random.randint(1,4)
-    return f
 def player(valor):
     valor = int(input(print("Valor?")))
     while valor not in [1,2,3,4]:
@@ -32,7 +28,8 @@ if modalidade == 1:
 elif modalidade == 2:
     print("Boa sorte!")
     while total > 1:
-        pc = rand(1)
+        from random import randint
+        pc = randint(1,4)
         if total in [1,6,11,16,21]:
             if total not in [1]:
                 total = total - pc
