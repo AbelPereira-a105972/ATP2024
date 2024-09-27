@@ -31,14 +31,14 @@ elif modalidade == 2:
         from random import randint
         pc = randint(1,4)
         if total in [1,6,11,16,21]:
-            if total not in [1]:
-                total = total - pc
-                print(f"Tirei {pc}          :TOTAL:{total}")
-                valor = player(1) 
-                total = total - valor
-                print(f"Tiras {valor}, então estamos em {total}.")
-                if total in [1]:
-                    print(f"Tirei 1         :TOTAL:0\n\nParabéns!! Conseguiste ganhar.")
+            total = total - pc
+            print(f"Tirei {pc}          :TOTAL:{total}")
+            valor = player(1) 
+            total = total - valor
+            print(f"Tiras {valor}, então estamos em {total}.")
+            if total in [1]:
+                total = total - total
+                print(f"Tirei 1         :TOTAL:{total}\n\nParabéns!! Conseguiste ganhar.")
         else:
             seq = 0
             while total not in [1,6,11,16]:
