@@ -39,31 +39,21 @@ elif modalidade == 2:
                 print(f"Tirei {pc}          :TOTAL:{total}")
                 valor = player(1) 
                 total = total - valor
-                print(f"H1 - Tiras {valor}, então estamos em {total}.")
+                print(f"Tiras {valor}, então estamos em {total}.")
                 if total in [1]:
                     print(f"Tirei 1         :TOTAL:0\n\nParabéns!! Conseguiste ganhar.")
-        elif total not in [1,6,11,16,21]:
-            print("Acho que já ganhei!")
-            while total > 1:
-                if total not in [1,6,11,16]:
-                    seq = 0
-                    while total not in [1,6,11,16]:
-                        total = total - 1
-                        seq = seq + 1
-                    print(f"Tirei {seq}          :TOTAL:{total}")
-                    if total == 1:
-                        valor = int(input(print("Só te resta uma opção...")))
-                        while valor != 1:
-                            valor = int(input(print("Sê um bom perdedor...")))
-                        print("Venci!!!")
-                elif total > 4:
-                    valor = int(input(print("Valor?")))
-                    while valor not in [1,2,3,4]:
-                        valor = int(input(print("Seleciona um valor entre 1 e 4.")))
-                    pc = valor - 5
-                    total = total + pc
-                    print(f"PC3 - Eu tiro {-pc}, ainda sobram {total} fósforos.")
-                if total != 1:
-                    valor = player(1)
-                    total = total - valor
-                    print(f"H2 - Tiras {valor}, então estamos em {total}.")
+        else:
+            seq = 0
+            while total not in [1,6,11,16]:
+                total = total - 1
+                seq = seq + 1
+            print(f"Tirei {seq}          :TOTAL:{total}")
+            if total == 1:
+                valor = int(input(print("Só te resta uma opção...")))
+                while valor != 1:
+                    valor = int(input(print("Sê um bom perdedor...")))
+                print("Ganhei!!")
+            elif total > 1:
+                valor = player(1)
+                total = total - valor
+                print(f"Tiras {valor}, então estamos em {total}.")
