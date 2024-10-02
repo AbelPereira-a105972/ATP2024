@@ -4,4 +4,4 @@
 
 ## Resumo
 
-O TP3 consistiu na criação de um jogo de fósforos entre o utilizador e o computador.
+Resolução de vários exercícios com tipos de dados numéricos usando estruturas condicionais e cíclicas.
