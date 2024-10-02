@@ -4,4 +4,4 @@
 
 ## Resumo
 
-O TP2 consistiu na criação de um jogo de advinha o número entre o utilizador e o computador.
+Resolução de vários exercícios com tipos de dados numéricos usando estruturas condicionais e cíclicas.
