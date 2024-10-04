@@ -59,13 +59,11 @@ def ordd(decres):
         i = i + 1
     return res
 def proc(N,lista):
-    i = 0
     for i in range(len(lista)):
         if N == lista[i]:
             pos = i
         elif N not in lista:
             pos = -1
-    i = i + 1
     return pos
 def menu():
     print("\n------------MENU------------\n")
