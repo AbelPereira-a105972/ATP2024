@@ -72,7 +72,7 @@ def menu():
     print("1- Criar Lista Aleatória\n2- Criar Lista\n3- Soma\n4- Média\n5- Maior\n6- Menor\n7- Ordenar Crescente\n8- Ordenar Decrescente\n9- Procura Elemento\n\n0-sair\n")
     cond = True
     while cond:
-        opcao = int(input(print("Introduza a opção pretendida.")))
+        opcao = int(input(print("Selecione uma opção do menu.")))
         while opcao not in [0,1,2,3,4,5,6,7,8,9]:
             opcao = int(input("Selecione uma opção válida!"))
         if opcao == 1:
