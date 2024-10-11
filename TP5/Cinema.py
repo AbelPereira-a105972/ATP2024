@@ -67,7 +67,7 @@ def vendebilhete(cinema, filme, lugar):
             vendidos.append(lugar)
     return
 
-opcao = 1
+opcao = '1'
 cinema = []
 menu()
 while opcao != '0':
