@@ -74,7 +74,6 @@ while opcao != '0':
     opcao = input("Selecione uma opcao")
     if opcao == '1':
         nome = input("Selecione o nome da sala.")
-        existesala(cinema, nome)
         inserirsala(cinema, nome)
     if opcao == '2':
         nome = input("Insira a sala.")
