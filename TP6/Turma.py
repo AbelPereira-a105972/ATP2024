@@ -63,6 +63,9 @@ def editAluno(turma, ID, nturma):
     for aluno in turma:
         nome, id, notas = aluno
         if id == ID:
+            s_nome = nome
+            s_id = id
+            s_notas = notas
             turma.remove(aluno)
             while sel != '0':
                 print("""
@@ -72,20 +75,24 @@ def editAluno(turma, ID, nturma):
 """)
                 sel = input("Selecione o que pretende alterar")
                 if sel == '1':
-                    nome = input("Insira o nome do aluno")
-                    print(f"Alteração efetuada: {nome}, {id}, {notas[0]}, {notas[1]}, {notas[2]}")
+                    s_nome = input("Insira o nome do aluno")
+                    print(f"""Alteração efetuada para {id}: 
+Nome: {s_nome} 
+Notas: {s_notas[0]}, {s_notas[1]}, {s_notas[2]}""")
                 elif sel == '2':
-                    notas = []
+                    s_notas = []
                     notatpc = int(input("Insira a nota do TPC"))
                     notapr = int(input("Insira a nota do projeto"))
                     notateste = int(input("Insira a nota do teste"))
-                    notas.append(notatpc)
-                    notas.append(notapr)
-                    notas.append(notateste)
-                    aluno = nome, id, notas
-                    turma.append(aluno)
-                    print(f"Alteração efetuada: {nome}, {id}, {notas}")
-    return
+                    s_notas.append(notatpc)
+                    s_notas.append(notapr)
+                    s_notas.append(notateste)
+                    print(f"""Alteração efetuada para {id}: 
+Nome: {s_nome} 
+Notas: {s_notas[0]}, {s_notas[1]}, {s_notas[2]}""")
+            s_aluno = (s_nome,s_id,s_notas)
+            turma.append(s_aluno)
+    return turma
 
 def removeAluno(turma, ID, nturma):
     cond = False
