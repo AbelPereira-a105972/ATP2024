@@ -62,7 +62,7 @@ def criar(tabMeteo):
     return tabMeteo
 
 def guardaTabMeteo(t, fnome):
-    f = open(f"./Semana7/{fnome}.txt", "w")
+    f = open(f"{fnome}.txt", "w")
     for data, min, max, prec in t:
         ano, mes, dia = data
         registo = f"{ano}-{mes}-{dia}|{min}|{max}|{prec}\n"
@@ -72,7 +72,7 @@ def guardaTabMeteo(t, fnome):
 
 def carregaTabMeteo(fnome):
     res = []
-    file = open(f"./Semana7/{fnome}.txt", "r")
+    file = open(f"{fnome}.txt", "r")
     for line in file:
         line = line.strip()
         campos = line.split("|")
