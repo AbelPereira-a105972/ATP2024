@@ -185,8 +185,8 @@ def ficheiro(fnome):
         cond = True
     return cond
 
-tabMeteo = []
-fnome = ""
+tabMeteo = carregaTabMeteo("meteorologia")
+fnome = "meteorologia"
 op = 'm'
 menu()
 while op != '0':
